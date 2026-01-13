@@ -96,7 +96,14 @@ const nextConfig: NextConfig = {
   experimental: {
     // Enable optimized package imports for better tree-shaking
     optimizePackageImports: ["@mui/material", "@mui/icons-material"],
+    // Use swcMinify for production to avoid Turbopack lightningcss issues
   },
+
+  // ==========================================================================
+  // BUILD OPTIMIZATION
+  // ==========================================================================
+  // Disable Turbopack on production/deployment to avoid native module issues
+  productionBrowserSourceMaps: false,
 
   // ==========================================================================
   // WEBPACK CONFIGURATION (if needed)
